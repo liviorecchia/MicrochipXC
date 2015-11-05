@@ -1,5 +1,3 @@
-//#define _XTAL_FREQ      4000000L
-//#define __delay_ms(x) _delay3((unsigned long)((x)*(_XTAL_FREQ/4000.0)))
 /*
  * olimex16x2.c
  * based on OLIMEX's LCD16x2.cpp
@@ -53,7 +51,7 @@ char LCD16x2getID(){
 
 void LCD16x2lcdSetBacklight(char value){
 	I2CStart();
-    I2CSend(LCD16x2ADDRESS<<1);
+    	I2CSend(LCD16x2ADDRESS<<1);
 	I2CSend(LCD16x2SET_BL);
 	I2CSend(value);
 	I2CStop();
